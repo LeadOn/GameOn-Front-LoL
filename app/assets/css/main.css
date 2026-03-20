@@ -42,4 +42,11 @@
   --color-footerBg: #0c1c3c;
   --color-textMuted: #a8b2d2;
   --color-accentBlue: #4a9eff;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+  --color-genderM: #8b5cf6;
+  --color-genderF: #ec4899;
+  --color-genderMix: #06b6d4;
+  --color-typeTeam: #14b8a6;
+  --color-typeInd: #f97316;
 }

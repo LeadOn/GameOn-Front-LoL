@@ -1,29 +1,40 @@
+<script setup lang="ts">
+const route = useRoute();
+</script>
+
 <template>
   <div
     class="min-h-screen w-full overflow-x-hidden bg-linear-to-br from-gradientDark via-gradientMid to-gradientDark">
+    <!-- Barre d'accent colorée en haut -->
+    <div class="h-0.5 w-full bg-linear-to-r from-accentBlue/0 via-accentBlue to-accentBlue/0"></div>
+
     <nav
-      class="sticky top-0 z-50 w-full border-b border-cardBg/50 bg-cardBg/95 shadow-lg backdrop-blur-md">
+      class="sticky top-0 z-50 w-full border-b border-cardBg/50 bg-gradientDark/95 shadow-lg backdrop-blur-md">
       <div
         class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-6">
-        <div class="flex items-center space-x-2 sm:space-x-4">
+        <NuxtLink to="/" class="flex items-center space-x-2 sm:space-x-4 group">
           <img
             src="/img/halterodata-logo.webp"
-            class="h-8 w-8 rounded-lg shadow-md sm:h-12 sm:w-12"
+            class="h-8 w-8 rounded-lg shadow-md transition-transform group-hover:scale-105 sm:h-12 sm:w-12"
             alt="Halterodata's Logo" />
           <div class="flex flex-col">
-            <span
-              class="text-base font-bold text-white sm:text-xl cursor-pointer"
-              >Halterodata</span
-            >
-            <span class="hidden text-xs text-textMuted sm:block"
-              >Statistiques d'haltérophilie</span
-            >
+            <span class="text-base font-bold text-white transition-colors group-hover:text-accentBlue sm:text-xl">
+              Halterodata
+            </span>
+            <span class="hidden text-xs text-textMuted sm:block">
+              Statistiques d'haltérophilie
+            </span>
           </div>
-        </div>
+        </NuxtLink>
         <div class="flex items-center space-x-4 sm:space-x-6">
           <NuxtLink
             to="/"
-            class="text-xs font-medium text-textMuted transition-colors hover:text-white sm:text-sm">
+            :class="[
+              'relative text-xs font-medium transition-colors sm:text-sm',
+              route.path === '/'
+                ? 'text-white after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-accentBlue'
+                : 'text-textMuted hover:text-white',
+            ]">
             Accueil
           </NuxtLink>
         </div>

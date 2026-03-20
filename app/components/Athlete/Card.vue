@@ -1,17 +1,20 @@
 <template>
-  <a
-    class="group relative block overflow-hidden rounded-2xl border border-cardBg/50 bg-linear-to-br from-footerBg/90 to-gradientDark/90 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:border-accentBlue/50 hover:shadow-accentBlue/20">
+  <NuxtLink
+    :to="`/athlete/${athlete.id}`"
+    class="group relative block will-change-transform overflow-hidden rounded-2xl border border-cardBg/50 bg-linear-to-br from-footerBg/90 to-gradientDark/90 shadow-xl backdrop-blur-xl transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1.5 hover:border-accentBlue/60 hover:shadow-2xl hover:shadow-accentBlue/15">
+    <!-- Lueur de survol -->
+    <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 ring-1 ring-accentBlue/40 transition-opacity duration-300 group-hover:opacity-100"></div>
     <div class="absolute inset-0 overflow-hidden">
       <img
         v-if="athlete.id === 4210"
         src="/img/athletes/gregoire-aubertin.jpg"
         alt="Grégoire Aubertin"
-        class="h-full w-full object-cover opacity-20 transition-opacity duration-300 group-hover:opacity-30" />
+        class="h-full w-full object-cover opacity-20 transition-[transform,opacity] duration-300 group-hover:scale-105 group-hover:opacity-35" />
       <img
         v-if="athlete.id === 1"
         src="/img/athletes/bastien-bonnamant.png"
         alt="Bastien Bonnamant"
-        class="h-full w-full object-cover opacity-20 transition-opacity duration-300 group-hover:opacity-30" />
+        class="h-full w-full object-cover opacity-20 transition-[transform,opacity] duration-300 group-hover:scale-105 group-hover:opacity-35" />
       <div
         class="absolute inset-0 bg-linear-to-t from-gradientDark via-transparent to-transparent"></div>
     </div>
@@ -89,13 +92,13 @@
           class="rounded-xl border border-cardBg/30 bg-gradientDark/60 p-4 backdrop-blur-sm">
           <div
             class="mb-2 text-xs font-medium tracking-wider text-textMuted uppercase">
-            Snatch
+            Arraché
           </div>
           <div class="text-2xl font-bold text-white">
             {{ athlete.bestStats.snatch || 0 }}kg
           </div>
           <div class="mt-1 text-xs text-textMuted/70">
-            ATH: {{ athlete.bestStats.snatch || 0 }}kg
+            Dernier: {{ athlete.lastStats.snatch || 0 }}kg
           </div>
         </div>
 
@@ -103,13 +106,13 @@
           class="rounded-xl border border-cardBg/30 bg-gradientDark/60 p-4 backdrop-blur-sm">
           <div
             class="mb-2 text-xs font-medium tracking-wider text-textMuted uppercase">
-            C&J
+            Épaulé-Jeté
           </div>
           <div class="text-2xl font-bold text-white">
             {{ athlete.bestStats.cj || 0 }}kg
           </div>
           <div class="mt-1 text-xs text-textMuted/70">
-            ATH: {{ athlete.bestStats.cj || 0 }}kg
+            Dernier: {{ athlete.lastStats.cj || 0 }}kg
           </div>
         </div>
 
@@ -138,9 +141,7 @@
             IWF: {{ athlete.lastStats.iwf || 0 }}
           </span>
         </div>
-        <NuxtLink
-          :to="`/athlete/${athlete.id}`"
-          class="flex items-center gap-2 text-sm font-medium text-accentBlue transition-transform group-hover:translate-x-1">
+        <div class="flex items-center gap-2 text-sm font-medium text-accentBlue transition-transform group-hover:translate-x-1">
           <span>Voir profil</span>
           <svg
             class="h-4 w-4"
@@ -153,10 +154,10 @@
               stroke-width="2"
               d="M9 5l7 7-7 7" />
           </svg>
-        </NuxtLink>
+        </div>
       </div>
     </div>
-  </a>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">

@@ -1,4 +1,15 @@
 <template>
+  <!-- Section héro -->
+  <div class="mb-10 sm:mb-14">
+    <h1 class="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+      Statistiques <span class="text-accentBlue">d'haltérophilie</span><br class="hidden sm:block" />
+      française
+    </h1>
+    <p class="mt-4 max-w-2xl text-base leading-relaxed text-textMuted">
+      Explorez les résultats des compétitions et suivez les performances des meilleurs athlètes de la fédération.
+    </p>
+  </div>
+
   <div class="mb-8">
     <div class="mb-4 flex items-center justify-between">
       <h2 class="text-2xl font-bold text-white sm:text-3xl">

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="overflow-x-hidden rounded-xl bg-footerBg/70 shadow-xl backdrop-blur-lg">
+    class="rounded-xl bg-footerBg/70 shadow-xl backdrop-blur-lg">
     <div v-if="props.loading" class="flex h-96 items-center justify-center">
       <div class="flex flex-col items-center gap-4">
         <div
@@ -350,9 +350,9 @@
                   </span>
                 </div>
               </td>
-              <td class="flex justify-center px-4 py-3 sm:px-6 sm:py-4">
+              <td class="px-4 py-3 sm:px-6 sm:py-4">
                 <span
-                  class="inline-flex items-center justify-center text-center rounded-full border border-cardBg bg-cardBg/50 px-2 py-1 text-xs font-medium text-textMuted sm:px-3">
+                  class="inline-flex items-center justify-center rounded-full border border-cardBg bg-cardBg/50 px-2 py-1 text-xs font-medium text-textMuted sm:px-3">
                   {{ competition.league }}
                 </span>
               </td>
@@ -385,7 +385,7 @@
               <td class="px-4 py-3 text-right sm:px-6 sm:py-4">
                 <NuxtLink
                   :to="`/competition/${competition.id}`"
-                  class="rounded-lg bg-accentBlue/20 px-3 py-1.5 text-xs font-medium text-accentBlue transition-all hover:bg-accentBlue/30 active:scale-95 sm:px-4 sm:py-2 sm:text-sm">
+                  class="whitespace-nowrap rounded-lg bg-accentBlue/20 px-3 py-1.5 text-xs font-medium text-accentBlue transition-all hover:bg-accentBlue/30 active:scale-95 sm:px-4 sm:py-2 sm:text-sm">
                   Voir détails
                 </NuxtLink>
               </td>
