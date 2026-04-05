@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+html,
+body,
+#__nuxt__ {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  overflow-x: hidden;
+}
+
 *,
 *::before,
 *::after {

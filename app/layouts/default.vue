@@ -4,7 +4,7 @@ const route = useRoute();
 
 <template>
   <div
-    class="min-h-screen w-full overflow-x-hidden bg-linear-to-br from-gradientDark via-gradientMid to-gradientDark">
+    class="min-h-screen w-screen bg-linear-to-br from-gradientDark via-gradientMid to-gradientDark">
     <!-- Barre d'accent colorée en haut -->
     <div
       class="h-0.5 w-full bg-linear-to-r from-accentBlue/0 via-accentBlue to-accentBlue/0"></div>
